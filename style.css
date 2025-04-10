@@ -1,0 +1,134 @@
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  transition: background 0.3s ease;
+}
+
+:root {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --btn-bg: #1f1f1f;
+  --btn-hover: #333333;
+  --highlight: #00bfa5;
+  --shadow: rgba(0, 0, 0, 0.4);
+}
+
+.light-mode {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --btn-bg: #f0f0f0;
+  --btn-hover: #e0e0e0;
+  --highlight: #00796b;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+.calculator-container {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--btn-bg);
+  border-radius: 12px;
+  box-shadow: 0 0 20px var(--shadow);
+  padding: 20px;
+}
+
+.theme-toggle {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.theme-toggle button {
+  background: transparent;
+  color: var(--text-color);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.history-box {
+  background: var(--bg-color);
+  padding: 10px;
+  height: 80px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  border: 1px solid var(--btn-hover);
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+}
+
+.display {
+  background: #000;
+  color: #00ffcc;
+  font-size: 2rem;
+  padding: 15px;
+  text-align: right;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  height: 60px;
+  overflow-x: auto;
+  font-family: monospace;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+button {
+  padding: 18px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--btn-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+button:hover {
+  background: var(--btn-hover);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+#equals {
+  background: var(--highlight);
+  color: #fff;
+  grid-column: span 1;
+}
+
+@media (max-width: 500px) {
+  .calculator-container {
+    padding: 15px;
+  }
+
+  .display {
+    font-size: 1.6rem;
+    padding: 10px;
+  }
+
+  button {
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  .history-box {
+    height: 70px;
+  }
+}
